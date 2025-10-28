@@ -11,16 +11,16 @@ export default function Counter() {
   ];
 
   return (
-    <section className="bg-white py-16 font-manrope">
-      <div className="max-w-9xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center">
+    <section className="bg-white py-16 md:py-20">
+      <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-16 text-center px-6">
         {stats.map((item, index) => (
-          <div key={index} className="flex flex-col items-center justify-center">
-            <h2 className="text-5xl text-green-800 font-manrope font-semibold">
+          <div key={index} className="flex flex-col items-center justify-center space-y-2 md:space-y-4">
+            <h2 className="text-[#0B7A1A] text-3xl md:text-5xl lg:text-[64px] font-bold leading-tight md:leading-[80px]">
               {item.prefix && item.prefix}
               <CountUp end={item.value} duration={3} separator="," />
               {item.suffix}
             </h2>
-            <p className="mt-2 text-sm text-green-900">{item.label}</p>
+            <p className="text-[#222A2C] text-sm md:text-lg font-medium leading-5 md:leading-6">{item.label}</p>
           </div>
         ))}
       </div>

@@ -9,8 +9,8 @@ const manrope = Manrope({
 });
 
 export const metadata = {
-  title: "My App",
-  description: "Next.js with Manrope Font",
+  title: "Cultivo - Agriculture Website",
+  description: "Transform your farming with cutting-edge agricultural technology and sustainable practices. Join thousands of farmers using our platform to increase productivity.",
 };
 
 export default function RootLayout({ children }) {

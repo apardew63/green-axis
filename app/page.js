@@ -1,6 +1,7 @@
 "use client";
 import Counter from "@/components/Counter";
 import FarmShowcase from "@/components/FarmShowcase";
+import AdditionalSections from "@/components/AdditionalSections";
 import Header, { NavbarDemo } from "@/components/Header";
 
 export default function HeroSection() {
@@ -10,7 +11,7 @@ export default function HeroSection() {
     <NavbarDemo/>
     <Counter/>
     <FarmShowcase/>
-    
+    <AdditionalSections/>
    </div>
   );
 }

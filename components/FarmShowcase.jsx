@@ -29,8 +29,8 @@ export default function FarmShowcase() {
     const categories = ["Organic farm", "Automation farm", "Bio-medical farm"];
 
     return (
-        <section className="relative bg-white py-16 px-8 md:px-16 overflow-hidden">
-            {/* FIGMA GRADIENT (smaller, positioned top-left) */}
+        <section className="relative bg-white py-16 md:py-24 px-6 md:px-16 overflow-hidden">
+            {/* FIGMA GRADIENT (positioned top-left) */}
             <div
                 className="absolute rounded-full blur-2xl"
                 style={{
@@ -45,24 +45,25 @@ export default function FarmShowcase() {
             />
 
             {/* MAIN CONTENT */}
-            <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-10">
+            <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 md:gap-16">
                 {/* LEFT SIDE — TEXT AREA */}
-                <div className="flex flex-col justify-center space-y-10">
+                <div className="flex flex-col justify-center space-y-8 md:space-y-16">
                     {/* Year Badge */}
-                    <div className="text-green-900 font-semibold text-2xl ">
+                    <div className="text-[#0B7A1A] font-bold text-2xl md:text-[32px] leading-tight md:leading-[40px]">
                         2025
                     </div>
 
                     {/* Category Buttons */}
-                    <div className="flex flex-col gap-8 mt-24">
-                        <div className="flex gap-24 mr-14">
+                    <div className="flex flex-col gap-4 md:gap-8">
+                        <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 md:gap-24">
                             {categories.map((cat, i) => (
                                 <button
                                     key={i}
-                                    className={`text-base ${i === 0
-                                        ? "text-green-700 font-semibold border-b-2 border-green-600"
-                                        : "text-gray-500 hover:text-green-700"
-                                        } transition-colors`}
+                                    className={`text-base md:text-lg font-medium transition-colors ${
+                                        i === 0
+                                            ? "text-[#0B7A1A] border-b-2 border-[#0B7A1A] pb-2"
+                                            : "text-[#7A7A7A] hover:text-[#0B7A1A]"
+                                    }`}
                                 >
                                     {cat}
                                 </button>
@@ -74,7 +75,7 @@ export default function FarmShowcase() {
                 {/* RIGHT SIDE — HEADING + SUBTEXT */}
                 <div className="flex flex-col justify-center">
                     <motion.h1
-                        className="text-4xl md:text-4xl font-semibold text-green-900 "
+                        className="text-[#222A2C] text-2xl md:text-4xl lg:text-[48px] font-bold leading-tight md:leading-[60px] mb-4 md:mb-8"
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7 }}
@@ -84,39 +85,41 @@ export default function FarmShowcase() {
                     </motion.h1>
 
                     {/* Subtext below */}
-                    <div className="flex justify-between text-gray-700 text-sm mt-3 md:mt-4 py-24">
-                        <span className="text-green-900 text-xl font-semibold">Harvesting Legacy.</span>
-                        <span className="text-green-900 text-xl font-semibold">Planting Tomorrow</span>
+                    <div className="flex flex-col sm:flex-row justify-between gap-4 text-[#222A2C] text-lg md:text-[20px] font-bold">
+                        <span>Harvesting Legacy.</span>
+                        <span>Planting Tomorrow</span>
                     </div>
                 </div>
             </div>
 
             {/* SLIDER SECTION */}
-            <div className="relative mt-12 md:mt-16">
+            <div className="relative mt-12 md:mt-20">
                 <Swiper
                     modules={[Navigation]}
                     navigation
-                    spaceBetween={-500}
-                    slidesPerView={1.5}
+                    spaceBetween={16}
+                    slidesPerView={1.1}
                     breakpoints={{
-                        768: { slidesPerView: 2.5 },
-                        1024: { slidesPerView: 3.2 },
+                        640: { slidesPerView: 1.5, spaceBetween: 24 },
+                        768: { slidesPerView: 2.2, spaceBetween: 32 },
+                        1024: { slidesPerView: 3.2, spaceBetween: 32 },
                     }}
                     className="overflow-visible"
                 >
                     {slides.map((slide, index) => (
                         <SwiperSlide key={index}>
                             <div
-                                className={`rounded-2xl overflow-hidden bg-white transition-transform duration-300 hover:-translate-y-1 w-96 h-96 ${index % 2 === 0 ? "mt-0" : "mt-10"
-                                    }`}
+                                className={`rounded-2xl overflow-hidden bg-white transition-transform duration-300 hover:-translate-y-2 w-full max-w-[384px] h-[320px] md:h-[384px] ${
+                                    index % 2 === 0 ? "mt-0" : "mt-5 md:mt-10"
+                                }`}
                             >
                                 <img
                                     src={slide.img}
                                     alt={slide.title}
-                                    className="w-72 h-96 object-cover"
+                                    className="w-full h-[240px] md:h-[320px] object-cover"
                                 />
-                                <div className="p-3 text-center text-gray-700">
-                                    <p>{slide.title}</p>
+                                <div className="p-4 md:p-6 text-center">
+                                    <p className="text-[#222A2C] text-base md:text-lg font-medium">{slide.title}</p>
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -127,17 +130,30 @@ export default function FarmShowcase() {
                 <style jsx global>{`
           .swiper-button-next,
           .swiper-button-prev {
-            color: #0f5132;
+            color: #0B7A1A;
             background: white;
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #E5E5E5;
           }
           .swiper-button-next::after,
           .swiper-button-prev::after {
             font-size: 16px;
             font-weight: bold;
+          }
+          .swiper-button-next {
+            right: -20px;
+          }
+          .swiper-button-prev {
+            left: -20px;
+          }
+          @media (max-width: 640px) {
+            .swiper-button-next,
+            .swiper-button-prev {
+              display: none;
+            }
           }
         `}</style>
             </div>
