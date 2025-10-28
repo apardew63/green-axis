@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 export default function AdditionalSections() {
   return (
@@ -94,7 +95,7 @@ export default function AdditionalSections() {
             >
               <div className="relative h-[516px] md:h-[400px] lg:h-[516px]">
                 <Image
-                  src="/feature.png"
+                  src="/farming.png"
                   alt="Farming Precision"
                   fill
                   className="object-cover"
@@ -119,7 +120,7 @@ export default function AdditionalSections() {
             >
               <div className="relative h-[384px] md:h-[300px] lg:h-[384px]">
                 <Image
-                  src="/feature.png"
+                  src="/crop.png"
                   alt="Crop Surveillance"
                   fill
                   className="object-cover"
@@ -144,7 +145,7 @@ export default function AdditionalSections() {
             >
               <div className="relative h-[450px] md:h-[350px] lg:h-[450px]">
                 <Image
-                  src="/feature.png"
+                  src="/automated.png"
                   alt="Automated Farming"
                   fill
                   className="object-cover"
@@ -175,7 +176,7 @@ export default function AdditionalSections() {
                 transition={{ duration: 0.6 }}
               >
                 <Image
-                  src="/feature.png"
+                  src="/desert.png"
                   alt="Agricultural Technology"
                   fill
                   className="object-cover"
@@ -207,7 +208,7 @@ export default function AdditionalSections() {
         <div
           className="absolute inset-0 w-full h-full"
           style={{
-            backgroundImage: 'url(/feature.png)',
+            backgroundImage: 'url(/newsletter.png)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             transform: 'scale(1.17) translateX(-3.75%) translateY(-30%)',
@@ -321,16 +322,16 @@ export default function AdditionalSections() {
               {/* Social Media Icons */}
               <div className="flex space-x-5">
                 {[
-                  { name: 'Facebook', icon: 'F' },
-                  { name: 'Twitter', icon: 'T' },
-                  { name: 'Instagram', icon: 'I' },
-                  { name: 'LinkedIn', icon: 'L' }
+                  { name: 'Facebook', icon: FaFacebook },
+                  { name: 'Twitter', icon: FaTwitter },
+                  { name: 'Instagram', icon: FaInstagram },
+                  { name: 'LinkedIn', icon: FaLinkedin }
                 ].map((social, index) => (
                   <div
                     key={index}
                     className="w-12 h-12 rounded-full border border-[#222A2C]/20 bg-[#222A2C]/4 flex items-center justify-center hover:bg-[#222A2C]/10 transition-colors cursor-pointer"
                   >
-                    <span className="text-[#222A2C] text-sm font-medium">{social.icon}</span>
+                    <social.icon className="text-[#222A2C] text-lg" />
                   </div>
                 ))}
               </div>

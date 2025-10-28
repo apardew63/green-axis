@@ -10,19 +10,19 @@ export default function FarmShowcase() {
     const slides = [
         {
             title: "Technology Irrigation",
-            img: "https://images.unsplash.com/photo-1590080875831-6a3a8468e49a?w=600",
+            img: "/showcase1.png",
         },
         {
             title: "Plant Propagation",
-            img: "https://images.unsplash.com/photo-1587502536263-7a21a1e5685b?w=600",
+            img: "/showcase2.png",
         },
         {
             title: "Irrigation System",
-            img: "https://images.unsplash.com/photo-1601979031925-424e53b6caaa?w=600",
+            img: "/showcase3.png",
         },
         {
             title: "Agricultural Monitoring",
-            img: "https://images.unsplash.com/photo-1602872029321-3de8973c82d8?w=600",
+            img: "/showcase4.png",
         },
     ];
 
