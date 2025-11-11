@@ -34,7 +34,7 @@ export function NavbarDemo() {
           <NavbarLogo />
           <NavItems
             items={navItems}
-            className="text-black text-lg font-semibold space-x-8"
+            className="text-black text-lg font-semibold space-x-8 bg-red-500"
           />
           <div className="flex items-center gap-6">
             <NavbarButton
